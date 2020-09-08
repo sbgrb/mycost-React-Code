@@ -9,7 +9,6 @@ import Tags from "./views/Tags";
 function App() {
     return (
         <Router>
-
             <Switch>
                 <Route path="/money">
                     <Money/>
@@ -25,7 +24,6 @@ function App() {
                     <Nofound/>
                 </Route>
             </Switch>
-
         </Router>
     );
 }
