@@ -1,29 +1,40 @@
-import React, {useState} from "react";
+import React from "react";
 import {Wrapper} from "./NumSection/Wrapper";
 import {getOutput} from "./NumSection/getOutput";
 
+type Props = {
+    value: number;
+    onChange: (value: number) => void;
+    onok?: () => void;
+}
 
-const  NumSection: React.FC = () =>{
-    const [output,_setOutput] = useState('0')
-    const setOutput = (output : string) =>{
-        if (output.length > 16){
-            output = output.slice(0,16)
-        }else if (output.length === 0){
-            output = '0'
+const NumSection: React.FC<Props> = (props) => {
+    const output = props.value.toString()
+    const setOutput = (output: string) => {
+        let value
+        if (output.length > 16) {
+            value = parseFloat(output.slice(0, 16))
+        } else if (output.length === 0) {
+            value = 0
+        }else {
+            value = parseFloat(output)
         }
-        _setOutput(output)
+        props.onChange(value)
     }
-    const onClickButtonWrapper = (e: React.MouseEvent) =>{
-        const text =  (e.target as HTMLButtonElement).textContent
-        if (text === null){return}
-        if (text === 'ok'){
+    const onClickButtonWrapper = (e: React.MouseEvent) => {
+        const text = (e.target as HTMLButtonElement).textContent
+        if (text === null) {
+            return
+        }
+        if (text === 'ok') {
+            if (props.onok){props.onok()}
             return;
         }
-        if ('0123456789'.split('').concat(['删除','清空']).indexOf(text) >= 0){
-           setOutput(getOutput(text,output))
+        if ('0123456789'.split('').concat(['删除', '清空']).indexOf(text) >= 0) {
+            setOutput(getOutput(text, output))
         }
     }
-    return(
+    return (
         <Wrapper>
             <div className='output'>
                 {output}
