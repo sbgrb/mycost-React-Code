@@ -5,6 +5,7 @@ import styled from "styled-components";
 import Icon from "Components/Icon";
 import {Link} from "react-router-dom";
 import {Button} from "Components/Button";
+import {Center} from "Components/Center";
 
 
 const TagList = styled.ol`
@@ -23,12 +24,7 @@ const TagList = styled.ol`
    }
 `
 
-const Center = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-`
+
 const Space = styled.div`
   height: 16px;
 `
