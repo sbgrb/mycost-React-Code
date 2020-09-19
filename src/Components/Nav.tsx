@@ -43,11 +43,11 @@ const Nav = () => {
                         记账</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/tags" activeClassName='selected'>
+                    <NavLink to="/tags" exact activeClassName='selected'>
                         <Icon name='tags'/>标签</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/statistics" activeClassName='selected'>
+                    <NavLink to="/statistics"  activeClassName='selected'>
                         <Icon name='statistics'/>统计</NavLink>
                 </li>
             </ul>
