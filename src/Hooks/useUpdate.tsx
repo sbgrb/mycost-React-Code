@@ -6,7 +6,5 @@ export const useUpdate = (fn: ()=>void,deps:any[]) =>{
         count.current += 1
     })
     useEffect(()=>{
-        if (count.current > 1){
-            fn()
-        }},deps)
+        if (count.current > 1){fn()}},deps)
 }

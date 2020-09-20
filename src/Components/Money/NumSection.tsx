@@ -2,10 +2,11 @@ import React from "react";
 import {Wrapper} from "./NumSection/Wrapper";
 import {getOutput} from "./NumSection/getOutput";
 
+
 type Props = {
     value: number;
     onChange: (value: number) => void;
-    onok?: () => void;
+    onOk?: () => void;
 }
 
 const NumSection: React.FC<Props> = (props) => {
@@ -26,8 +27,8 @@ const NumSection: React.FC<Props> = (props) => {
         if (text === null) {
             return
         }
-        if (text === 'ok') {
-            if (props.onok){props.onok()}
+        if (text === 'OK') {
+            if (props.onOk){props.onOk()}
             return;
         }
         if ('0123456789'.split('').concat(['删除', '清空']).indexOf(text) >= 0) {
