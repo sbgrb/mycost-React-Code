@@ -11,6 +11,9 @@ const MyLayout = styled(Layout)`
   display:flex;
   flex-direction: column;
 `
+const CatSectionWrapper = styled.div`
+ background: #c4c4c4;
+`
 
 type Catgory = '-' | '+'
 
@@ -20,6 +23,7 @@ const defaultFormData = {
     category: '-' as Catgory,
     amount: 0
 }
+
 
 function Money() {
     const [selected,setSelected] = useState(defaultFormData)
@@ -39,8 +43,10 @@ function Money() {
                 onChange={tagIds => onChange({tagIds})}/>
             <NoteSection value={selected.note}
                 onChange={note => onChange({note})}/>
+            <CatSectionWrapper>
             <CatSection value={selected.category}
                 onChange={category => onChange({category})}/>
+            </CatSectionWrapper>
             <NumSection value={selected.amount}
                 onChange={amount =>onChange({amount})}
                         onOk={submit}
