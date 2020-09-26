@@ -61,7 +61,7 @@ const Tag: React.FC = () => {
                 <span>编辑标签</span>
                 <Icon/>
             </Topbar>
-            {tag ? tagContent(tag) : <Center><Space/><Space/><Space/>tag不存在</Center>}
+            {tag ? tagContent(tag) : <Center><Space/><Space/><Space/>{<Button onClick={onClickBack}>返回标签页</Button>}</Center>}
         </Layout>
     )
 }
