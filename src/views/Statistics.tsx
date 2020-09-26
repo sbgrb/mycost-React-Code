@@ -35,9 +35,8 @@ function Statistics() {
     const  hash: {[K: string] : RecordItem[]} = {}
     const selectedRecords = records.filter(r => r.category === category)
 
-    selectedRecords.map(r=>{
+    selectedRecords.forEach(r=>{
        const key =  day(r.createdAt).format('YYYY年MM月DD日')
-        const value = r
         if(!(key in hash)){
             hash[key] = []}hash[key].push(r)})
 
@@ -55,7 +54,6 @@ function Statistics() {
             <CatSection value={category}
             onChange={value => setCategory(value)}/>
             </CatSectionWrapper>
-
             {array.map(([date,records]) => <div>
             <Header>
                 {date}
