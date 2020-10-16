@@ -1,5 +1,6 @@
 {
   "name": "morney-react",
+  "homepage": "https://gitee.comcd/mycost-react-website/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
